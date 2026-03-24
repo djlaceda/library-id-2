@@ -1,1 +1,18 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>To-Do List</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            padding: 0;\n            background-color: #f4f4f4;\n        }\n        h1 {\n            color: #333;\n        }\n        form {\n            margin-bottom: 20px;\n        }\n        input[type='text'] {\n            padding: 10px;\n            width: 300px;\n            border: 1px solid #ccc;\n        }\n        input[type='submit'] {\n            padding: 10px 15px;\n            background-color: #5cb85c;\n            border: none;\n            color: white;\n            cursor: pointer;\n        }\n        ul {\n            list-style-type: none;\n            padding: 0;\n        }\n        li {\n            background: white;\n            margin: 5px 0;\n            padding: 10px;\n            border-radius: 4px;\n            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\n        }\n    </style>\n</head>\n<body>\n    <h1>To-Do List</h1>\n    <form id="task-form">\n        <input type="text" id="task-input" placeholder="Add a new task..." required>\n        <input type="submit" value="Add Task">\n    </form>\n    <ul id="task-list"></ul>\n    <script>\n        const form = document.getElementById('task-form');\n        const taskInput = document.getElementById('task-input');\n        const taskList = document.getElementById('task-list');\n\n        form.addEventListener('submit', function (e) {\n            e.preventDefault();\n            const taskText = taskInput.value;\n            const li = document.createElement('li');\n            li.textContent = taskText;\n            taskList.appendChild(li);\n            taskInput.value = '';\n        });\n    </script>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <input type="text" id="taskInput" placeholder="Add a new task...">
+        <button id="addTaskBtn">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
